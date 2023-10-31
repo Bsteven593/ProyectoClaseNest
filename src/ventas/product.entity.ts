@@ -1,7 +1,7 @@
 import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, DeleteDateColumn, Entity,PrimaryGeneratedColumn, UpdateDateColumn,ManyToOne } from "typeorm";
 import { CategoryEntity } from "./category.entity";
 
-@Entity('products', {schema: 'ventas'})
+@Entity('products', {schema: 'venta'})
 export class ProductEntity{
     @PrimaryGeneratedColumn('uuid')
     id:String;
@@ -40,7 +40,7 @@ category:CategoryEntity
         comment:'Product Tittle'
     })
     tittle:string;
-    @Column('number', {
+    @Column('numeric', {
         name: 'price',
         nullable: false,
         comment: 'product price'
@@ -52,13 +52,7 @@ category:CategoryEntity
         comment: 'product description'
     })
     description:string;
-    @Column('image',{
-        name: 'image',
-        nullable: true,
-        comment: 'product image'
-    })
-    image:string;
-
+    
     @BeforeInsert()
     @BeforeUpdate()
 
