@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { VentasController } from './ventas/ventas.controller';
 import { VentasService } from './ventas/ventas.service';
 
+
 @Module({
   imports: [VentasModule,TypeOrmModule.forRoot({
     type: 'postgres',

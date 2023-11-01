@@ -1,21 +1,21 @@
 import { Entity, PrimaryColumn, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate, OneToMany } from "typeorm";
 import { ProductEntity } from "./product.entity";
 
-@Entity('category', { schema: 'venta' })
+@Entity('category', { schema: 'ventas' })
 export class CategoryEntity {
     @PrimaryGeneratedColumn('uuid')
     id: String;
     @CreateDateColumn({
         name: 'create_at',
         type: 'timestamp',
-        default: () => 'CURRENTE_TIMESTAMP',
+        default: () => 'CURRENT_TIMESTAMP',
     })
     createAt: Date;
 
     @UpdateDateColumn({
         name: 'update_at',
         type: 'timestamp',
-        default: () => 'CURRENTE_TIMESTAMP',
+        default: () => 'CURRENT_TIMESTAMP',
 
     })
     updateAt: Date;
