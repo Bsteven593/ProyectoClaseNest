@@ -1,7 +1,7 @@
-import {Exclude} from "nestjs-class-transformer"
+import {Exclude,Expose} from "class-transformer";
 import { BaseProductDto } from "./base-product.dto";
 
-@Exclude
+@Exclude()
 export class ReadProductDto extends BaseProductDto{
     @Expose()
     readonly id;
